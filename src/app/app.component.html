@@ -1,0 +1,72 @@
+<div class="wrapper">
+  <h1 class="nomarginbot">
+    <span class="material-symbols-outlined icons-in-h1">mail</span>
+    ChatGPT Template Filler
+  </h1>
+  <div class="mainarea">
+    <ng-container *ngIf="!form; else elseTemplateLeft">
+      <article class="item col-left" style="height: 100%">
+        <header style="margin-bottom: 1em"><b>Template</b></header>
+        <textarea
+          name="targetText"
+          [(ngModel)]="pastedText"
+          placeholder="Paste from ChatGPT or other tools..."
+          id=""
+          cols="30"
+          rows="20"
+        ></textarea>
+        <button
+          role="button"
+          class="align-text-icon"
+          (click)="parseTemplateMakeForm(pastedText)"
+        >
+          <span class="material-symbols-outlined">chip_extraction</span>
+          Extract Variables
+        </button>
+      </article>
+    </ng-container>
+    <ng-template #elseTemplateLeft>
+      <article class="item col-left" style="height: 100%; padding: 1.5em">
+        <div class="substitutionScreen">
+          {{ selectedTemplate }}
+          <button class="align-text-icon">
+            <span class="material-symbols-outlined">arrow_back</span>
+            back
+          </button>
+        </div>
+      </article>
+    </ng-template>
+
+    <article class="item col-right">
+      <header style="margin-bottom: 1em"><b>Variables</b></header>
+
+      <ng-container *ngIf="!form; else elseTemplateRight">
+        <h2>Placeholders are extracted here</h2>
+      </ng-container>
+      <ng-template #elseTemplateRight>
+        <form [formGroup]="form">
+          <div *ngFor="let field of fields">
+            <label [for]="field">{{ field }}</label>
+            <input
+              type="text"
+              [placeholder]="field"
+              [id]=""
+              [formControlName]="field"
+              (keyup)="updateText(field)"
+            />
+          </div>
+        </form>
+
+        <button (click)="copyToClipboard()" class="align-text-icon">
+          <span class="material-symbols-outlined">file_copy</span>
+          Copy to Clipboard
+        </button>
+
+        <button class="secondary align-text-icon" (click)="(resetForm)">
+          <span class="material-symbols-outlined">close</span>
+          Clear Form
+        </button>
+      </ng-template>
+    </article>
+  </div>
+</div>

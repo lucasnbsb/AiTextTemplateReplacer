@@ -1,0 +1,47 @@
+{
+  "eslint.packageManager": "pnpm",
+  "npm.packageManager": "pnpm",
+  "eslint.run": "onType",
+  "eslint.format.enable": false,
+  "eslint.probe": ["javascript", "typescript", "json", "jsonc"],
+  "editor.formatOnSaveMode": "modifications",
+  "workbench.iconTheme": "material-icon-theme",
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "typescript.experimental.tsserver.web.enableProjectWideIntellisense": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true
+  },
+  "[html]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

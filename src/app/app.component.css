@@ -1,0 +1,58 @@
+.wrapper{
+    height: calc(100vh - 3em);
+    width: calc(100vw - 3em);
+    margin: 1.5em;
+}
+
+.item {
+    margin: 0;
+    overflow: scroll;
+}
+
+.template-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    white-space:pre-wrap;
+    width: 100%;
+    padding: 0;
+}
+
+.nomargin{
+    margin: 0;
+}
+
+.nomarginbot{
+    margin-bottom: 0;
+}
+
+.mainarea{
+    height: 85vh;
+    display: flex;
+    column-gap: 1em;
+}
+
+.col-left {
+    flex-basis: 70%;
+    align-content: space-around;
+}
+
+.col-right {
+    flex-basis: 30%;
+}
+
+.align-text-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+
+.substitutionScreen{
+    display:flex;
+    flex-flow: column wrap;
+    white-space: pre-wrap; 
+    height: 100%; 
+    justify-content: space-between;
+}
